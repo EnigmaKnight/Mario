@@ -1,0 +1,1348 @@
+<head>
+</head>
+
+<body>
+<canvas id="myCanvas" width="1000" height="800" style="border:1px solid #cccccc;"></canvas>
+
+<script type="text/javascript">
+
+class Score
+{
+	constructor()
+	{
+		this.canvas = document.getElementById("myCanvas")
+		this.leftNum = 0
+		this.rightNum = 0
+		this.totalCoins = 0
+		this.tLeftNum = 0
+		this.tRightNum = 0
+
+        	this.zeroImg = new Image()
+        	this.zeroImg.src = "zero.png"
+        	this.oneImg = new Image()
+        	this.oneImg.src = "one.png"
+        	this.twoImg = new Image()
+        	this.twoImg.src = "two.png"
+        	this.threeImg = new Image()
+        	this.threeImg.src = "three.png"
+        	this.fourImg = new Image()
+        	this.fourImg.src = "four.png"
+        	this.fiveImg = new Image()
+        	this.fiveImg.src = "five.png"
+        	this.sixImg = new Image()
+        	this.sixImg.src = "six.png"
+        	this.sevenImg = new Image()
+        	this.sevenImg.src = "seven.png"
+        	this.eightImg = new Image()
+        	this.eightImg.src = "eight.png"
+        	this.nineImg = new Image()
+        	this.nineImg.src = "nine.png"
+        	this.fSlashImg = new Image()
+        	this.fSlashImg.src = "fSlash.png"
+	}
+
+	update()
+	{
+		let ctx = this.canvas.getContext("2d")
+		ctx.drawImage(this.fSlashImg, 180, 30, 90, 90)
+		if (this.rightNum == 1){
+			ctx.drawImage(this.oneImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 2){
+			ctx.drawImage(this.twoImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 3){
+			ctx.drawImage(this.threeImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 4){
+			ctx.drawImage(this.fourImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 5){
+			ctx.drawImage(this.fiveImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 6){
+			ctx.drawImage(this.sixImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 7){
+			ctx.drawImage(this.sevenImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 8){
+			ctx.drawImage(this.eightImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 9){
+			ctx.drawImage(this.nineImg, 90, 30, 90, 90)
+		}
+		else if (this.rightNum == 0){
+			ctx.drawImage(this.zeroImg, 90, 30, 90, 90)
+		}
+
+		if (this.leftNum == 1){
+			ctx.drawImage(this.oneImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 2){
+			ctx.drawImage(this.twoImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 3){
+			ctx.drawImage(this.threeImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 4){
+			ctx.drawImage(this.fourImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 5){
+			ctx.drawImage(this.fiveImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 6){
+			ctx.drawImage(this.sixImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 7){
+			ctx.drawImage(this.sevenImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 8){
+			ctx.drawImage(this.eightImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 9){
+			ctx.drawImage(this.nineImg, 0, 30, 90, 90)
+		}
+		else if (this.leftNum == 0){
+			ctx.drawImage(this.zeroImg, 0, 30, 90, 90)
+		}
+
+		if (this.tLeftNum == 1){
+			ctx.drawImage(this.oneImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 2){
+			ctx.drawImage(this.twoImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 3){
+			ctx.drawImage(this.threeImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 4){
+			ctx.drawImage(this.fourImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 5){
+			ctx.drawImage(this.fiveImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 6){
+			ctx.drawImage(this.sixImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 7){
+			ctx.drawImage(this.sevenImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 8){
+			ctx.drawImage(this.eightImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 9){
+			ctx.drawImage(this.nineImg, 270, 30, 90, 90)
+		}
+		else if (this.tLeftNum == 0){
+			ctx.drawImage(this.zeroImg, 270, 30, 90, 90)
+		}
+
+		if (this.tRightNum == 1){
+			ctx.drawImage(this.oneImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 2){
+			ctx.drawImage(this.twoImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 3){
+			ctx.drawImage(this.threeImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 4){
+			ctx.drawImage(this.fourImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 5){
+			ctx.drawImage(this.fiveImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 6){
+			ctx.drawImage(this.sixImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 7){
+			ctx.drawImage(this.sevenImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 8){
+			ctx.drawImage(this.eightImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 9){
+			ctx.drawImage(this.nineImg, 360, 30, 90, 90)
+		}
+		else if (this.tRightNum == 0){
+			ctx.drawImage(this.zeroImg, 360, 30, 90, 90)
+		}
+	}
+}
+
+class Sprite
+{
+    constructor()
+    {}
+
+    update()
+    {
+
+    }
+
+    draw()
+    {
+
+    }
+
+    isBrick()
+    {
+
+    }
+
+    isCoinBrick()
+    {
+
+    }
+
+    isCoin()
+    {
+
+    }
+
+    isWarpPipe()
+    {
+
+    }
+
+    collisionDetection()
+    {
+        if (this.breaking)
+        {
+            return 0
+        }
+
+        if (this.mario.x + 60 + 150 < this.x)
+        {
+            return 0
+        }
+        if (this.mario.x + 150 > this.x + this.w)
+        {
+            return 0
+        }
+        if (this.mario.y + 500 > this.y + this.h)
+        {
+            return 0
+        }
+        if (this.mario.y + 95 + 500 < this.y)
+        {
+            return 0
+        }
+        return 1
+    }
+
+    collisionType()
+    {
+        if (this.mario.yPrev + 95 + 500 < this.y  || this.mario.y + 95 + 500 < this.y)
+        {
+            this.mario.vert_vel = 0
+            this.mario.y = this.y - 95 - 500
+            if (this.mario.marioDucking && this.isWarpPipe && this.mario.x + 150 > this.x && this.mario.x + 150 + 60 < this.x + this.w)
+            {
+                return 6
+            }
+
+            return 0
+        }
+        else if (this.mario.yPrev + 500 > this.y + this.h)
+        {
+            this.mario.y = this.mario.yPrev
+            this.mario.vert_vel = 6.2
+
+            if (this.isCoinBrick() == 1)
+            {
+                return 5
+            }
+
+            return 1
+        }
+        else if (this.mario.xPrev + 60 + 150 < this.x)
+        {
+            return 2
+        }
+        else if (this.mario.xPrev + 150 > this.x + this.w)
+        {
+            return 3
+        }
+    }
+}
+
+class WarpPipe extends Sprite
+{
+    constructor(x, y, w, h, m, id, pairNum)
+    {
+        super()
+        this.canvas = document.getElementById("myCanvas")
+
+        this.warpPipeImg = new Image()
+        this.warpPipeImg.src = "warpPipe.png"
+
+        this.x = x
+        this.y = y
+        this.w = w
+        this.h = h
+        this.mario = m
+        this.id = id
+        this.pairNum = pairNum
+    }
+
+    update()
+    {
+
+    }
+
+    draw()
+    {
+        let ctx = this.canvas.getContext("2d")
+	    if (this.mario.marioDeath && this.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.warpPipeImg, this.x - this.mario.xDeath, this.y - this.mario.yDeath, this.w, this.h)
+	    }
+	    else
+	    {
+        	ctx.drawImage(this.warpPipeImg, this.x - this.mario.x, this.y - this.mario.y, this.w, this.h)
+	    }
+    }
+
+    isWarpPipe()
+    {
+        return 1
+    }
+
+    isBrick()
+    {
+        return 0
+    }
+
+    isCoinBrick()
+    {
+        return 0
+    }
+
+    isCoin()
+    {
+        return 0
+    }
+}
+
+class Mario extends Sprite
+{
+    constructor()
+    {
+        super()
+        this.canvas = document.getElementById("myCanvas")
+        this.marioImagesR = []
+        this.marioImagesL = []
+
+        this.marioImage1 = new Image()
+        this.marioImage1.src = "mario1.2.png"
+        this.marioImage2 = new Image()
+        this.marioImage2.src = "mario2.2.png"
+        this.marioImage3 = new Image()
+        this.marioImage3.src = "mario3.2.png"
+        this.marioImage4 = new Image()
+        this.marioImage4.src = "Mario4.2.png"
+        this.marioImage5 = new Image()
+        this.marioImage5.src = "Mario5.2.png"
+        this.marioImage6 = new Image()
+        this.marioImage6.src = "Mario6.2.png"
+        this.marioImagesR.push(this.marioImage1)
+        this.marioImagesR.push(this.marioImage2)
+        this.marioImagesR.push(this.marioImage3)
+        this.marioImagesL.push(this.marioImage4)
+        this.marioImagesL.push(this.marioImage5)
+        this.marioImagesL.push(this.marioImage6)
+
+        this.marioStandRImage = new Image()
+        this.marioStandRImage.src = "marioStandR.2.png"
+        this.marioStandLImage = new Image()
+        this.marioStandLImage.src = "marioStandL.2.png"
+        this.marioJumpRImage = new Image()
+        this.marioJumpRImage.src = "marioJumpingR.2.png"
+        this.marioJumpLImage = new Image()
+        this.marioJumpLImage.src = "marioJumpingL.2.png"
+        this.marioDuckingRImage = new Image()
+        this.marioDuckingRImage.src = "marioDuckingR.png"
+        this.marioDuckingLImage = new Image()
+        this.marioDuckingLImage.src = "marioDuckingL.png"
+	    this.marioDeathImage = new Image()
+	    this.marioDeathImage.src = "marioDeath.png"
+
+        this.x = 0
+        this.y = -100
+        this.h = 90
+        this.w = 65
+        this.xPrev = 0
+        this.yPrev = 0
+	    this.xDeath = "NotSet"
+	    this.yDeath = "NotSet"
+        this.vert_vel = 0
+        this.jumping = false
+        this.airTime = 0
+	    this.marioCoins = 0
+        this.onGround = true
+        this.marioDucking = false
+        this.marioJumpingSound = new Audio("Mario-jump-sound.mp3")
+        this.marioControlable = true
+        this.marioWarping = false
+	    this.marioDeath = false
+	    this.marioDeathCounter = 0
+	    this.xRef = 0
+	    this.yRef = 0
+        this.direction = false // false = right; true = left
+    }
+
+    update()
+    {
+	    if (this.marioDeath)
+	    {
+	    	if (this.marioDeathCounter == 0)
+	    	{
+		    	this.xDeath = this.x
+		    	this.yDeath = this.y
+	    	}
+		    if (this.marioDeathCounter <= 5)
+	    	{
+	    		this.vert_vel = 0
+		    }
+		    else if (this.marioDeathCounter <= 10)
+		    {
+		    	this.vert_vel -= 6.2
+		    }
+		    else if (this.marioDeathCounter <= 20)
+		    {
+		    	this.vert_vel += 6.2
+		    }
+		    this.marioDeathCounter++
+	    }
+        else if (this.marioWarping)
+        {
+            this.vert_vel = 0
+        }
+        else if (!this.jumping || this.airTime >= 5)
+        {
+            this.vert_vel += 6.2
+        }
+        this.y += this.vert_vel
+        if(this.y > 180 && !this.marioWarping)
+        {
+            this.marioControlable = false
+		    this.marioDeath = true
+        }
+    }
+
+    draw()
+    {
+        let ctx = this.canvas.getContext("2d")
+
+	    if(this.marioDeath && this.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.marioDeathImage, 150, 505 - (this.yDeath - this.y), this.w + 20, this.h + 20)
+	    }
+        else if(this.x > this.xRef)
+        {
+            this.direction = false
+
+            if(!this.onGround){
+                ctx.drawImage(this.marioJumpRImage, 150, 505, this.w, this.h)
+            }
+            else if (this.marioDucking)
+            {
+                ctx.drawImage(this.marioDuckingRImage, 150, 505, this.w, this.h)
+            }
+            else{
+                ctx.drawImage(this.marioImagesR[(Math.abs(this.x)/10)%3], 150, 505, this.w, this.h)
+            }
+        }
+        else if(this.x < this.xRef)
+        {
+            this.direction = true
+
+            if(this.onGround == false){
+                ctx.drawImage(this.marioJumpLImage, 150, 505, this.w, this.h)
+            }
+            else if (this.marioDucking)
+            {
+                ctx.drawImage(this.marioDuckingLImage, 150, 505, this.w, this.h)
+            }
+            else{
+                ctx.drawImage(this.marioImagesL[(Math.abs(this.x)/10)%3], 150, 505, this.w, this.h)
+            }
+        }
+        else
+        {
+            if(this.onGround == false)
+            {
+                if (!this.direction)
+                {
+                    ctx.drawImage(this.marioJumpRImage, 150, 505, this.w, this.h)
+                }
+                else
+                {
+                    ctx.drawImage(this.marioJumpLImage, 150, 505, this.w, this.h)
+                }
+            }
+            else if (this.marioDucking)
+            {
+                if (!this.direction)
+                {
+                    ctx.drawImage(this.marioDuckingRImage, 150, 505, this.w, this.h)
+                }
+                else
+                {
+                    ctx.drawImage(this.marioDuckingLImage, 150, 505, this.w, this.h)
+                }
+            }
+            else
+            {
+                if (!this.direction)
+                {
+                    ctx.drawImage(this.marioStandRImage, 150, 505, this.w, this.h)
+                }
+                else
+                {
+                    ctx.drawImage(this.marioStandLImage, 150, 505, this.w, this.h)
+                }
+            }
+        }
+    }
+
+    isWarpPipe()
+    {
+        return 0
+    }
+
+    isBrick()
+    {
+        return 0
+    }
+
+    isCoinBrick()
+    {
+        return 0
+    }
+
+    isCoin()
+    {
+        return 0
+    }
+}
+
+class Brick extends Sprite
+{
+    constructor(x, y, w, h, m)
+    {
+        super()
+        this.canvas = document.getElementById("myCanvas")
+        this.brickImage = new Image()
+        this.brickImage.src = "brick.png"
+        this.brickPieceImage = new Image()
+        this.brickPieceImage.src = "brokenBrick.png"
+        this.x = x
+        this.y = y
+        this.w = w
+        this.h = h
+        this.mario = m
+        this.breakBrick = false
+        this.breaking = false
+        this.breakingCounter = 1
+        this.breakingAudio = new Audio("Super_Mario_Bros_Break_Block_Sound_Effect.mp3")
+    }
+
+    update()
+    {
+        if (this.breaking)
+        {
+            if (this.breakingCounter == 1)
+            {
+                this.breakingAudio.play()
+            }
+            if (this.breakingCounter == 5)
+            {
+                this.breakBrick = true
+            }
+            this.breakingCounter++
+        }
+    }
+
+    draw()
+    {
+        let ctx = this.canvas.getContext("2d")
+
+        if (this.breaking && this.mario.marioDeath && this.mario.xDeath != "NotSet")
+        {
+
+        }
+        else if (this.breaking)
+        {
+            ctx.drawImage(this.brickPieceImage, this.x - this.mario.x - (this.breakingCounter * 10), this.y - this.mario.y - (this.breakingCounter * 10), this.w/2, this.h/2)
+            ctx.drawImage(this.brickPieceImage, this.x + (this.w/2) - this.mario.x + (this.breakingCounter * 10), this.y - this.mario.y - (this.breakingCounter * 10), this.w/2, this.h/2)
+            ctx.drawImage(this.brickPieceImage, this.x - this.mario.x - (this.breakingCounter * 10), this.y + (this.h/2) - this.mario.y + (this.breakingCounter * 10), this.w/2, this.h/2)
+            ctx.drawImage(this.brickPieceImage, this.x + (this.w/2) - this.mario.x + (this.breakingCounter * 10), this.y + (this.h/2) - this.mario.y + (this.breakingCounter * 10), this.w/2, this.h/2)
+        }
+	    else if (this.mario.marioDeath && this.mario.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.brickImage, this.x - this.mario.xDeath, this.y - this.mario.yDeath, this.w, this.h)
+	    }
+	    else
+	    {
+        	ctx.drawImage(this.brickImage, this.x - this.mario.x, this.y - this.mario.y, this.w, this.h)
+	    }
+    }
+
+    isWarpPipe()
+    {
+        return 0
+    }
+
+    isBrick()
+    {
+        return 1
+    }
+
+    isCoinBrick()
+    {
+        return 0
+    }
+
+    isCoin()
+    {
+        return 0
+    }
+}
+
+class CoinBrick extends Sprite
+{
+    constructor(x, y, w, h, m, s)
+    {
+        super()
+        this.canvas = document.getElementById("myCanvas")
+        this.brickImage = new Image()
+        this.brickImage.src = "coinBrick.png"
+        this.x = x
+        this.y = y
+        this.w = w
+        this.h = h
+        this.mario = m
+	    this.score = s
+        this.coinsHeld = 5
+        this.audio2 = new Audio("coinSound.mp3")
+        this.audio3 = new Audio("coinSound.mp3")
+        this.audio4 = new Audio("coinSound.mp3")
+        this.audio5 = new Audio("coinSound.mp3")
+        this.audio6 = new Audio("coinSound.mp3")
+    }
+
+    update()
+    {
+
+    }
+
+    draw()
+    {
+        let ctx = this.canvas.getContext("2d")
+	    if (this.mario.marioDeath && this.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.brickImage, this.x - this.mario.xDeath, this.y - this.mario.yDeath, this.w, this.h)
+	    }
+	    else
+	    {
+            ctx.drawImage(this.brickImage, this.x - this.mario.x, this.y - this.mario.y, this.w, this.h)
+	    }
+    }
+
+    isBrick()
+    {
+        return 0
+    }
+    isCoinBrick()
+    {
+        return 1
+    }
+
+    isCoin()
+    {
+        return 0
+    }
+
+    isWarpPipe()
+    {
+        return 0
+    }
+
+    ejectCoin()
+    {
+        if (this.coinsHeld != 0)
+        {   
+            if (this.coinsHeld == 5){
+                this.audio2.play()
+            }
+            else if (this.coinsHeld == 4){
+                this.audio3.play()
+            }
+            else if (this.coinsHeld == 3){
+                this.audio4.play()
+            }
+            else if (this.coinsHeld == 2){
+                this.audio5.play()
+            }
+            else if (this.coinsHeld == 1){
+                this.audio6.play()
+            }
+	        this.mario.marioCoins = this.mario.marioCoins + 1
+	        if (this.score.rightNum == 9)
+	        {
+	    	    this.score.rightNum = 0
+		        this.score.leftNum++
+	        }
+	        else 
+	        {
+		    this.score.rightNum++
+	        }
+            let c = new Coin(this.x, this.y - 75, this.mario)
+            this.coinsHeld--
+            if (this.coinsHeld == 0)
+            {
+                this.brickImage.src = "coinBrickE.png"
+            }
+            return c
+        }
+    }
+}
+
+class Coin extends Sprite
+{
+    constructor(x, y, mario)
+    {
+        super()
+        this.canvas = document.getElementById("myCanvas")
+        this.coinImage = new Image
+        this.coinImage.src = "coin.png"
+        this.x = x
+        this.y = y
+        this.mario = mario
+        this.w = 75
+        this.h = 75
+        this.vert_vel = -12
+        this.hori_vel = 1 + Math.floor(Math.random() * 11) + 2
+        this.despawning = false
+        this.waitingToBeDeleted = false
+
+    }
+
+    update()
+    {
+        this.vert_vel += 6.2
+        this.y += this.vert_vel
+        this.x += this.hori_vel
+
+        if (this.y > 525 && !this.despawning)
+        {
+            this.y = 525
+            this.vert_vel = -24.8
+        }
+
+        if (this.x + 75 >= this.mario.x + 995)
+        {
+            this.despawning = true
+            this.hori_vel = 0
+            this.vert_vel = 12.4
+
+            if (this.y > 800)
+            {
+                this.waitingToBeDeleted = true
+            }
+        }
+    }
+
+    draw()
+    {
+        let ctx = this.canvas.getContext("2d")
+	    if (this.mario.marioDeath && this.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.coinImage, this.x - this.mario.xDeath, this.y - this.mario.yDeath, this.w, this.h)
+	    }
+	    else
+	    {
+        	ctx.drawImage(this.coinImage, this.x - this.mario.x, this.y - this.mario.y, this.w, this.h)
+	    }
+    }
+
+    isBrick()
+    {
+        return 0
+    }
+
+    isCoinBrick()
+    {
+        return 0
+    }
+
+    isCoin()
+    {
+        return 1
+    }
+}
+
+class Model
+{
+    constructor()
+    {
+        this.sprites = []
+        this.backupSprites = []
+        this.mario = new Mario()
+	    this.score = new Score()
+        this.sprites.push(this.mario)
+
+	    this.brickGB10 = new Brick(-900, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickGB10)
+	    this.brickGB9 = new Brick(-810, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickGB9)
+	    this.brickGB8 = new Brick(-720, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB8)
+    	this.brickGB7 = new Brick(-630, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB7)
+    	this.brickGB6 = new Brick(-540, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB6)
+    	this.brickGB5 = new Brick(-450, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB5)
+    	this.brickGB4 = new Brick(-360, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB4)
+    	this.brickGB3 = new Brick(-270, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB3)
+    	this.brickGB2 = new Brick(-180, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickGB2)
+	    this.brickGB1 = new Brick(-90, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickGB1)
+	    this.brickG1 = new Brick(0, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG1)
+	    this.brickG2 = new Brick(90, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG2)
+    	this.brickG3 = new Brick(180, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG3)
+    	this.brickG4 = new Brick(270, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG4)
+    	this.brickG5 = new Brick(360, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG5)
+    	this.brickG6 = new Brick(450, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG6)
+    	this.brickG7 = new Brick(540, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG7)
+    	this.brickG8 = new Brick(630, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG8)
+	    this.brickG9 = new Brick(720, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG9)
+    	this.brickG10 = new Brick(810, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG10)
+    	this.brickG11 = new Brick(900, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG11)
+    	this.brickG12 = new Brick(990, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG12)
+    	this.brickG13 = new Brick(1080, 594, 90, 90, this.mario)
+       	this.sprites.push(this.brickG13)
+	    this.brickG14 = new Brick(1170, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickG14)
+    	this.brickG15 = new Brick(1260, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickG15)
+    	this.brickG16 = new Brick(1350, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG16)
+    	this.brickG17 = new Brick(1440, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG17)
+       	this.brickG18 = new Brick(1530, 594, 90, 90, this.mario)
+	    this.sprites.push(this.brickG18)
+	    this.brickG19 = new Brick(1620, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG19)
+    	this.brickG20 = new Brick(1710, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG20)
+    	this.brickG21 = new Brick(1800, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG21)
+
+    	this.brickG11 = new Brick(900, 594, 90, 90, this.mario)
+    	this.sprites.push(this.brickG11)
+
+        this.brick1 = new Brick(250, 504, 90, 90, this.mario)
+        this.sprites.push(this.brick1)
+        this.brick2 = new Brick(340, 394, 90, 90, this.mario)
+        this.sprites.push(this.brick2)
+        this.brick3 = new Brick(430, 284, 90, 90, this.mario)
+        this.sprites.push(this.brick3)
+        this.brick4 = new Brick(610, 279, 90, 90, this.mario)
+        this.sprites.push(this.brick4)
+      	this.brick5 = new Brick(810, 234, 90, 90, this.mario)
+	    this.sprites.push(this.brick5)
+	    this.brick6 = new Brick(1020, 189, 90, 90, this.mario)
+    	this.sprites.push(this.brick6)
+	    this.brick6 = new Brick(1260, 144, 90, 90, this.mario)
+    	this.sprites.push(this.brick6)
+    	this.coinBrick1 = new CoinBrick(1260, -55, 90, 90, this.mario, this.score)
+    	this.sprites.push(this.coinBrick1)
+	    this.coinBrick2 = new CoinBrick(-1800, 324, 90, 90, this.mario, this.score)
+	    this.sprites.push(this.coinBrick2)
+	    this.coinBrick3 = new CoinBrick(1260, 334, 90, 90, this.mario, this.score)
+	    this.sprites.push(this.coinBrick3)
+
+	    this.brick7 = new Brick(1440, 504, 90, 90, this.mario)
+    	this.sprites.push(this.brick7)
+    	this.brick8 = new Brick(1440, 414, 90, 90, this.mario)
+    	this.sprites.push(this.brick8)
+    	this.brick9 = new Brick(1440, 324, 90, 90, this.mario)
+    	this.sprites.push(this.brick9)
+	    this.brick10 = new Brick(1440, 234, 90, 90, this.mario)
+        this.sprites.push(this.brick10)
+	    this.brick11 = new Brick(1440, 144, 90, 90, this.mario)
+    	this.sprites.push(this.brick11)
+    	this.brick12 = new Brick(1440, 54, 90, 90, this.mario)
+	    this.sprites.push(this.brick12)
+	    this.brick13 = new Brick(1440, -36, 90, 90, this.mario)
+    	this.sprites.push(this.brick13)
+
+        this.warpPipe1 = new WarpPipe(0, 499, 95, 95, this.mario, "wp1", 0)
+        this.sprites.push(this.warpPipe1)
+        this.warpPipe2 = new WarpPipe(1540 , 499, 95, 95, this.mario, "wp1", 1)
+        this.sprites.push(this.warpPipe2)
+
+        this.collideType = []
+	    this.warpDestx = 0
+	    this.warpDesty = 0
+	    this.warped = false
+
+        this.audio = new Audio("03 - Super Mario Bros 2 Main Theme.mp3")
+        this.warpAudio = new Audio("Super_Mario_Bros_Pipe_Sound_Effect.mp3")
+        this.deathAudio = new Audio("Death.mp3")
+        this.deathCounter = 0
+        
+
+	    for (let i = 0; i < this.sprites.length; i++){
+		    if (this.sprites[i].isCoinBrick()){
+			    if (this.score.tRightNum == 5){
+				    this.score.tRightNum = 0
+				    this.score.tLeftNum++
+			    }
+			    else{
+				    this.score.tRightNum = 5	
+			    }
+		    }
+	    }
+    }
+
+    update()
+    {
+        if (!this.mario.marioWarping)
+        {
+            this.onGround()
+        }
+        this.collideType = []
+        this.collideType.push(4)
+        for(let i = 0; i < this.sprites.length; i++)
+		{
+            if (this.sprites[i].breakBrick == true)
+            {
+                this.backupSprites.push(this.sprites[i])
+                this.sprites.splice(i, 1)
+            }
+			this.sprites[i].update()
+		}
+	    if (!this.mario.marioDeath)
+	    {
+            this.collisionDetectionPrep()
+	    }
+        else
+        {
+            if (this.deathCounter == 0)
+            {
+                this.audio.pause()
+                this.deathAudio.play()
+                this.deathCounter++
+            }
+            else if (this.deathCounter == 1)
+            {
+                this.deathCounter++
+            }
+            else {}
+        }
+        this.deleter()
+    }
+
+    collisionDetectionPrep()
+    {
+        if (this.mario.marioWarping)
+        {
+	        if (this.warped)
+	        {
+		        this.mario.y = this.mario.y - 3
+		        if (this.mario.y <= this.mario.yPrev - 95)
+		        {
+			        this.mario.marioWarping = false
+			        this.mario.marioControlable = true
+			        this.warped = false
+		        }
+	        }
+            else if (this.mario.y >= this.mario.yPrev + 95)
+            {
+                this.mario.x = this.warpDestx + 10
+		        this.mario.y = this.warpDesty
+		        this.mario.yPrev = this.mario.y
+		        this.warped = true
+                this.warpAudio.play()
+            }
+		    else
+		    {
+			    this.mario.y = this.mario.y + 3
+		    }
+            return false
+        }
+
+        let collidingSprites = []
+
+        for(let i = 0; i < this.sprites.length; i++)
+        {
+            var spriteType = typeof(this.sprites[i])
+            if (this.sprites[i] != this.mario)
+            {
+                if (this.sprites[i].collisionDetection() == 1)
+                {
+                    collidingSprites.push(this.sprites[i])
+                }
+            }
+        }
+
+        if(collidingSprites.length != 0)
+        {
+            this.collideType = []
+            for(let i = 0; i < collidingSprites.length; i++)
+            {
+                let collideTTemp = collidingSprites[i].collisionType()
+                this.collideType.push(collideTTemp)
+
+                if (collideTTemp == 5)
+                {
+                    if (collidingSprites[i].coinsHeld != 0)
+                    {
+                        this.sprites.push(collidingSprites[i].ejectCoin())
+                    }
+                }
+                if (collideTTemp == 6 && collidingSprites[i].isWarpPipe() == 1)
+                {
+                    this.warpAudio.play()
+                    for(let j = 0; j < this.sprites.length; j++)
+                    {
+
+                        if (this.sprites[j].isWarpPipe() == 1 && collidingSprites[i].id == this.sprites[j].id && collidingSprites[i] != this.sprites[j])
+                        {
+                            this.mario.marioControlable = false
+                            this.mario.marioWarping = true
+                            this.mario.yPrev = this.mario.y
+                            this.warpDestx = this.sprites[j].x - 150
+                            this.warpDesty = this.sprites[j].y - 500
+                        }
+                    }
+                }
+                if (collideTTemp == 1 && collidingSprites[i].isBrick() == 1)
+                {
+                    collidingSprites[i].breaking = true
+                }
+            }
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+
+    onGround()
+    {
+        for (let i = 0; i < this.collideType.length; i++)
+        {
+            if(this.collideType[i] == 0 || this.collideType[i] == 6)
+            {
+                this.mario.airTime = 0
+                this.mario.onGround = true
+                return true
+            }
+        }
+        this.mario.airTime++
+        this.mario.onGround = false
+        return false
+    }
+
+    deleter()
+    {
+        for (let i = 0; i < this.sprites.length; i++)
+        {
+            if (this.sprites[i].isCoin())
+            {
+                if (this.sprites[i].waitingToBeDeleted == true)
+                {
+                    this.sprites.splice(i, 1)
+                }
+            }
+        }
+    }
+}
+
+class View
+{
+    constructor(m)
+    {
+        this.model = m
+        this.canvas = document.getElementById("myCanvas")
+        this.background = new Image()
+        this.background.src = "1-1Background.png"
+    }
+
+    update()
+    {
+        let ctx = this.canvas.getContext("2d")
+	    ctx.clearRect(0, 0, 1000, 800)
+	    if (this.model.mario.marioDeath && this.xDeath != "NotSet")
+	    {
+		    ctx.drawImage(this.background, -(1000 * 0.10) - (this.model.mario.xDeath * 0.10), -(800 * 0.15) + (this.model.mario.yDeath * 0.10), (1000 + (1000 * 0.33)), (800 + (800 * 0.33)))
+	    }
+	    else
+	    {
+        	ctx.drawImage(this.background, -(1000 * 0.10) - (this.model.mario.x * 0.10), -(800 * 0.15) + (this.model.mario.y * 0.10), (1000 + (1000 * 0.33)), (800 + (800 * 0.33)))
+	    }
+        for(let i = 0; i < this.model.sprites.length; i++)
+		{
+			this.model.sprites[i].draw()
+		}
+	    this.model.score.update()
+    }
+}
+
+class Controller
+{
+    constructor(v, m)
+    {
+        this.model = m
+        this.view = v
+        this.key_right = false
+        this.key_left = false
+        this.key_up = false
+        this.key_down = false
+        this.key_space = false
+        this.key_r = false
+        this.key_w = false
+        this.key_a = false
+        this.key_s = false
+        this.key_d = false
+        let self = this
+        this.move = 0
+        document.addEventListener('keydown', function(event) { self.keyDown(event); }, false)
+		document.addEventListener('keyup', function(event) { self.keyUp(event); }, false)
+    }
+
+    keyDown(event)
+	{
+        if(event.keyCode == 32) this.key_space = true;
+		else if(event.keyCode == 39) this.key_right = true;
+		else if(event.keyCode == 37) this.key_left = true;
+		else if(event.keyCode == 38) this.key_up = true;
+		else if(event.keyCode == 40) this.key_down = true;
+		else if(event.keyCode == 27) this.key_escape = true;
+        else if(event.keyCode == 82) this.key_r = true;
+        else if(event.keyCode == 87) this.key_w = true;
+        else if(event.keyCode == 65) this.key_a = true;
+        else if(event.keyCode == 83) this.key_s = true;
+        else if(event.keyCode == 68) this.key_d = true;
+	}
+
+	keyUp(event)
+	{
+        if(event.keyCode == 32) this.key_space = false;
+		else if(event.keyCode == 39) this.key_right = false;
+		else if(event.keyCode == 37) this.key_left = false;
+		else if(event.keyCode == 38) this.key_up = false;
+		else if(event.keyCode == 40) this.key_down = false;
+		else if(event.keyCode == 27) this.key_escape = false;
+        else if(event.keyCode == 82) this.key_r = false
+        else if(event.keyCode == 87) this.key_w = false
+        else if(event.keyCode == 65) this.key_a = false
+        else if(event.keyCode == 83) this.key_s = false
+        else if(event.keyCode == 68) this.key_d = false
+	}
+
+    update()
+    {   
+	    if (this.key_escape)
+	    {
+		    close()
+	    }
+
+        for (let i = 0; i < this.model.collideType.length; i++)
+        {
+            if (this.model.collideType[i] == 4 && !this.model.mario.marioWarping)
+            {1
+                this.model.mario.xPrev = this.model.mario.x
+                this.model.mario.yPrev = this.model.mario.y
+            }
+        }
+
+	    this.model.mario.xRef = this.model.mario.x
+	    this.model.mario.yRef = this.model.mario.y
+
+        if((this.key_down || this.key_s) && this.model.mario.marioControlable)
+        {
+            if (this.model.onGround())
+            {
+                this.model.mario.marioDucking = true
+            }
+        }
+        else
+        {
+            this.model.mario.marioDucking = false
+        }
+
+        if((this.key_right || this.key_d) && this.model.mario.marioControlable)
+        {
+            let leftCollide = false
+            if (this.move != 2) {
+                this.move++
+            }
+            for (let i = 0; i < this.model.collideType.length; i++)
+            {
+                if (this.model.collideType[i] == 2)
+                {
+                    leftCollide = true
+                    this.model.mario.x = this.model.mario.xRef
+                }
+            }
+            if (!leftCollide && !this.model.mario.marioDucking)
+            {
+                this.model.mario.x += 10
+            }
+        }
+
+        if((this.key_left || this.key_a) && this.model.mario.marioControlable)
+        {
+            if (this.move != 2) {
+                this.move++
+            }
+            let rightCollide = false
+            for (let i = 0; i < this.model.collideType.length; i++)
+            {
+                if (this.model.collideType[i] == 3)
+                {
+                    rightCollide = true
+                    this.model.mario.x = this.model.mario.xRef
+                }
+            }
+            if (!rightCollide && !this.model.mario.marioDucking)
+            {
+                this.model.mario.x -= 10
+            }
+        }
+
+        if((this.key_up || this.key_w || this.key_space) && this.model.mario.marioControlable)
+        {
+            if (this.move != 2) {
+                this.move++
+            }
+            let headCollision = false
+            for (let i = 0; i < this.model.collideType.length; i++)
+            {
+                if(this.model.collideType[i] == 1 || this.model.collideType[i] == 5)
+                {
+                    headCollision = true
+                }
+            }
+            if(this.model.mario.airTime >= 5)
+            {
+                this.model.mario.jumping = false
+                this.model.mario.vert_vel += 6.2
+            }
+            else if(!headCollision)
+            {
+                this.model.mario.jumping = true
+                this.model.mario.vert_vel -= 6.2
+                this.model.mario.marioJumpingSound.play()
+            }
+        }
+
+        if (this.key_r)
+        {
+            this.model.mario.x = 0
+            this.model.mario.xPrev = 0
+            this.model.mario.y = -100
+            this.model.mario.yPrev = 0
+            this.model.score.leftNum = 0
+            this.model.score.rightNum = 0
+            this.model.audio.pause()
+            this.model.audio.currentTime = 0
+            this.model.audio.play()
+		    this.model.mario.marioControlable = true
+		    this.model.mario.marioWarping = false
+		    this.model.mario.marioDeath = false
+		    this.model.mario.xDeath = 0
+		    this.model.mario.yDeath = 0
+		    this.model.mario.vert_vel = 0
+		    this.model.mario.airTime = 0
+            this.model.deathCounter = 0
+            this.model.mario.marioDeathCounter = 0 
+
+            for (let i = 0; i < this.model.backupSprites.length; i++)
+            {
+                console.log(this.model.backupSprites[i])
+                this.model.sprites.push(this.model.backupSprites[i])
+            }
+            console.log("*****************")
+
+            this.model.backupSprites = []
+
+            for (let i = 0; i < this.model.sprites.length; i++)
+            {
+                console.log("sprites.length = " + this.model.sprites.length)
+                console.log("VVV sprites[" + i + "] VVV")
+                console.log(this.model.sprites[i])
+
+                if (this.model.sprites[i].isCoinBrick() == 1)
+                {
+                    this.model.sprites[i].coinsHeld = 5
+                    this.model.sprites[i].brickImage.src = "coinBrick.png"
+                }
+
+                if (this.model.sprites[i].isCoin() == 1)
+                {
+                    this.model.sprites[i].waitingToBeDeleted()
+                }
+
+                if (this.model.sprites[i].isBrick() == 1)
+                {
+                    this.breakBrick = false
+                    this.breaking = false
+                    this.breakingCounter = 1
+                }
+            }
+        }
+
+        if (this.move == 1){
+            this.model.audio.play()
+        }
+    }
+}
+
+class Game
+{
+    constructor()
+    {
+        this.model = new Model()
+        this.view = new View(this.model)
+        this.controller = new Controller(this.view, this.model)
+    }
+
+    run()
+    {
+        this.controller.update()
+        this.model.update()
+        this.view.update()
+    }
+}
+
+let g = new Game
+let timer = setInterval(function() { g.run(); }, 40)
+
+</script>
+
+</body>
